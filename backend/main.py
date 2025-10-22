@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 import os
 
-from model_utils.model_loader import load_vggnet_model
+from model_utils.model_loader import load_densenet_model
 from model_utils.preprocess import preprocess_image
 from model_utils.gradcam import generate_gradcam
 
@@ -29,13 +29,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "backend/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # =========================
 # 2️⃣ Load model 1 lần
 # =========================
-model, device = load_vggnet_model(model_dir="models")
+model, device = load_densenet_model()
 
 
 # =========================
