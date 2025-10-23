@@ -1,13 +1,37 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chuẩn đoán viêm phổi</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <title>🫁 Phát hiện Viêm Phổi - AI Diagnostic</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="overlay"></div>
+
+<div class="card">
+    <h1>🫁 Phát hiện Viêm Phổi</h1>
+    <p class="subtitle">
+        Tải lên ảnh X-quang để hệ thống AI phân tích nguy cơ viêm phổi
+    </p>
+
+    <div class="scroll-area">
+        <div id="uploadBox" class="upload-box">
+            <p>📤 Kéo & thả ảnh vào đây hoặc <span id="fileText">chọn file</span></p>
+            <input type="file" id="fileInput" accept="image/*" hidden />
+        </div>
+
+        <img id="previewImg" class="preview" alt="Ảnh X-quang xem trước" />
+    </div>
+
+    <button class="btn" id="analyzeBtn">🔍 Phân tích ảnh</button>
+</div>
+
+
+<div class="footer">
+    <p class="glow-text">⚙️ AI Diagnostic System</p>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
