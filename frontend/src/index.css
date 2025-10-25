@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: url('background.png') center center / contain no-repeat fixed;
+    background-color: #0b0e11;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 25px;
+    z-index: 3;
+    color: #a7d8ff;
+    text-shadow: 0 0 10px #00c6ff, 0 0 20px #007bff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00c6ff; }
+    to { text-shadow: 0 0 25px #007bff, 0 0 45px #00e6ff; }
+}
+.lab-logo {
+    position: absolute;
+    bottom: 50px;
+    right: 114px;
+    width: 300px;
+    opacity: 0.9;
+    z-index: 3;
+    filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.7));
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.lab-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+    opacity: 1;
+}
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal {
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    padding: 30px 35px;
+    border-radius: 16px;
+    width: 480px;
+    max-width: 90%;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    animation: slideUp 0.4s ease;
+}
+
+.modal h2 {
+    color: #007bff;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.modal p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.close-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
