@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onUpload: (file: File) => Promise<any> | void;
@@ -12,7 +13,8 @@ export default function ImageUpload({ onUpload }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
   const [isDragging, setIsDragging] = useState(false);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     return () => {
       if (previewUrl) {
@@ -76,7 +78,15 @@ export default function ImageUpload({ onUpload }: Props) {
     setError(null);
     try {
       const res = await onUpload(file);
-      setResult(res ?? "Uploaded");
+      // Navigate to Result page with the analysis data
+      navigate('/result', {
+        state: {
+          diagnosis: res.diagnosis,
+          probability: res.probability,
+          originalImage: previewUrl,
+          gradcamImage: res.gradcamImage
+        }
+      });
     } catch (e: any) {
       setError(e?.message || "Upload failed");
     } finally {
