@@ -1,0 +1,38 @@
+# Tên file: docker-compose.yml
+version: '3.8'
+
+services:
+  # --- Backend ---
+  api:
+    container_name: pneumonia-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile #Trỏ tới file DockerFile trong thư mục backend
+    volumes:
+      - ./backend:/app:ro # Mount code để sửa code backend là server nhận ngay
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  # --- Frontend ---
+  frontend:
+    container_name: pneumonia-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile # Trỏ vào file Dockerfile mới tạo
+    volumes:
+      - ./:/app      # Mount code để sửa giao diện là trình duyệt tự load lại
+      - /app/node_modules # Giữ nguyên node_modules của container
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
