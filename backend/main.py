@@ -9,7 +9,8 @@ import os
 from utils.load_model import load_densenet_model
 from utils.preprocess import preprocess_image
 from utils.gradcam import generate_gradcam
-from backend.utils.upload_image import save_uploaded_file
+from utils.upload_image import save_uploaded_file
+from utils.predict import predict
 
 origins = [
     "http://localhost:5173",
@@ -47,7 +48,7 @@ model, device = load_densenet_model()
 # 3️⃣ Route: /predict
 # =========================
 @app.post("/predict")
-async def predict(image: UploadFile = File(...)):
+async def predict_image(image: UploadFile = File(...)):
     """
     Nhận 1 ảnh X-ray (jpg/png), dự đoán NORMAL/PNEUMONIA và sinh Grad-CAM.
     """
