@@ -91,7 +91,7 @@ class PneumoniaDenseNet(nn.Module):
 # ==============================
 # 2️⃣ Hàm load model đã huấn luyện
 # ==============================
-def load_densenet_model(model_dir="backend\models", model_name="pneumonia_model_DenseNet.pth", device=None):
+def load_densenet_model(model_dir="models", model_name="pneumonia_model_DenseNet.pth", device=None):
     """
     Load mô hình PneumoniaDenseNet từ thư mục models/
     Args:
