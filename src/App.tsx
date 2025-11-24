@@ -5,6 +5,8 @@ import { useState } from 'react';
 import AnalyzingView from './components/Analyzing';
 import Header from './components/Header';
 
+import { analyzeImage } from './services/api';
+
 type AnalysisResult = {
   label: string;
   labelVi: string;
@@ -30,26 +32,38 @@ export default function App() {
     setPreviewUrl(null);
   };
 
-  const handleAnalyze = () => {
+  const handleAnalyze = async () => {
     if (!selectedImage) return;
     setView('analyzing');
     
     // GIẢ LẬP API CALL
-    setTimeout(() => {
-      const isPneumonia = Math.random() > 0.5; 
-      const confidence = (0.85 + Math.random() * 0.14).toFixed(2);
+    try {
+      // --- BẮT ĐẦU GỌI API ---
+      const data = await analyzeImage(selectedImage);
+      
+      // Kiểm tra kết quả từ Server (NORMAL hoặc PNEUMONIA)
+      const isPneumonia = data.prediction === "PNEUMONIA";
 
+      // Ánh xạ dữ liệu từ Python sang cấu trúc của Frontend
       setResult({
-        label: isPneumonia ? "PNEUMONIA" : "NORMAL",
+        label: data.prediction,
         labelVi: isPneumonia ? "Dương tính - Viêm phổi" : "Bình thường",
-        confidence: confidence,
+        confidence: data.confidence, // Server đã trả về chuỗi "98.50"
         details: isPneumonia 
-          ? "Phát hiện vùng mờ bất thường ở thùy phổi. Cần bác sĩ chuyên khoa kiểm tra lại."
-          : "Không phát hiện dấu hiệu bất thường rõ ràng trên phim chụp.",
-        severity: isPneumonia ? "high" : "low"
+          ? "Phát hiện vùng mờ bất thường trên ảnh X-quang. Vui lòng xem ảnh nhiệt (Heatmap) để biết vị trí."
+          : "Không phát hiện dấu hiệu viêm phổi rõ ràng trên phim chụp.",
+        severity: isPneumonia ? "high" : "low",
+        // gradcamUrl: data.gradcam_image_url // Lưu URL ảnh Heatmap
       });
+      
+      // Chuyển sang màn hình kết quả
       setView('result');
-    }, 3000);
+
+    } catch (error) {
+      console.error("Lỗi khi phân tích:", error);
+      alert("Có lỗi xảy ra khi kết nối đến Server. Vui lòng kiểm tra lại Backend.");
+      setView('upload'); // Quay lại màn hình upload nếu lỗi
+    }
   };
 
   const handleReset = () => {

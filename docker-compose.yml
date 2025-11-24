@@ -10,6 +10,7 @@ services:
       dockerfile: Dockerfile #Trỏ tới file DockerFile trong thư mục backend
     volumes:
       - ./backend:/app:ro # Mount code để sửa code backend là server nhận ngay
+      - /app/uploads
     ports:
       - "8000:8000"
     networks:
