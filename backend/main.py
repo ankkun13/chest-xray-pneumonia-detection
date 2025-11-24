@@ -1,10 +1,10 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-import torch
-import numpy as np
-import cv2
+from fastapi.staticfiles import StaticFiles
+from PIL import Image
 import os
+import traceback
 
 from utils.load_model import load_densenet_model
 from utils.preprocess import preprocess_image
@@ -35,8 +35,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_FOLDER = "backend/uploads"
+UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+app.mount("/uploads", StaticFiles(directory=UPLOAD_FOLDER), name="uploads")
 
 # =========================
 # 2️⃣ Load model 1 lần
@@ -54,25 +56,29 @@ async def predict_image(image: UploadFile = File(...)):
     """
     try:
         image_path = await save_uploaded_file(image, UPLOAD_FOLDER)
-
+        filename = os.path.basename(image_path)
+        
+        pil_image = Image.open(image_path).convert('RGB')
         # 2. Tiền xử lý & Chuẩn bị
-        image_tensor = preprocess_image(image_path, device)
+        image_tensor = preprocess_image(pil_image, device)
 
         # 3. Dự đoán và format kết quả
         label, confidence = predict(model, image_tensor, device)
 
-        # Cần thêm Grad-CAM
-        #
-        #
-        #
+
+        base_url = "http://localhost:8000/uploads"
 
         return JSONResponse({
             "prediction": label,
             "confidence": f"{confidence:.2f}%",
-            "image_path": image_path
+            "image_path": f"{base_url}/{filename}",
         })
 
     except Exception as e:
+        # In lỗi chi tiết ra Docker Log để debug
+        print("======== LỖI SERVER (500) ========")
+        traceback.print_exc()
+        print("==================================")
         raise HTTPException(status_code=500, detail=str(e))
 
 
