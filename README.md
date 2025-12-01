@@ -75,16 +75,19 @@
 
 ### Tài liệu tham khảo & Phụ lục
 **📚 Tài liệu tham khảo**
-   - [1] Kaiming He et al. Deep Residual Learning for Image Recognition (ResNet).
+   - [1] [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) - Kaiming He et al. (2015).
 
-   - [2] Gao Huang et al. Densely Connected Convolutional Networks (DenseNet).
+   - [2] [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) - Gao Huang et al. (2018).
 
-   - [3] Dataset: "Chest X-Ray Images (Pneumonia)".
+   - [3] [Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning](https://www.sciencedirect.com/science/article/pii/S0092867418301545) - Daniel S. Kermany et al. (2018). Cell 172.5.
 
-   - [4] Kingma & Ba. Adam: A Method for Stochastic Optimization.
+   - [4] [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980) - Diederik P. Kingma and Jimmy Ba (2017).
 
-   - [5] Simonyan & Zisserman. VGGNet.
+   - [5] [PyTorch: An Imperative Style, High-Performance Deep Learning Library](https://arxiv.org/abs/1912.01703) - Adam Paszke et al. (2019).
+   
+   - [6] [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556) - Karen Simonyan and Andrew Zisserman (2015).
 
+   - [7] [Pneumonia in Children](https://www.who.int/news-room/fact-sheets/detail/pneumonia) - World Health Organization (2019).
 **📎 Phụ lục** *(Tùy chọn)*
    - 📎 Kết quả bổ sung, đoạn mã hoặc hướng dẫn sử dụng
 
