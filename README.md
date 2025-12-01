@@ -2,8 +2,6 @@
 
 **📋 Thông tin:**
 
-[Các thông tin này cũng cần được đưa vào báo cáo PDF và slide trình bày.]
-
 * **📚 Môn học:** MAT3508 - Nhập môn Trí tuệ Nhân tạo  
 * **📅 Học kỳ:** Học kỳ 1 - 2025-2026  
 * **🏫 Trường:** VNU-HUS (Đại học Quốc gia Hà Nội - Trường Đại học Khoa học Tự nhiên)  
@@ -15,14 +13,13 @@
 
 **👥 Thành viên nhóm:**
 
-**👥 Team Members:**
 
 | 👤 Name           | 🆔 Student ID        | 🐙 GitHub Username   | 🛠️ Contribution |
 |------------------|---------------------|---------------------|----------------------|
-| Nguyễn Hữu An | 23001493 | ankkun13 | [Your Contribution 1] |
-| Nguyễn Tiến Đạt   | 23001515 | tiendat228 | [Your Contribution 2] |
-| Nguyễn Văn Dũng  | 23001508 | NguyenDung2301 | [Your Contribution 3] |
-| Vũ Đức Quý  | 23001553 | VUDUCQUY | [Your Contribution 3] |
+| Nguyễn Hữu An | 23001493 | ankkun13 | Xây dựng Demo, Xây dựng mô hình |
+| Nguyễn Tiến Đạt   | 23001515 | tiendat228 | Thiết kế Slide, Làm báo cáo |
+| Nguyễn Văn Dũng  | 23001508 | NguyenDung2301 | Xây dựng mô hình, Xây dựng Demo |
+| Vũ Đức Quý  | 23001553 | VUDUCQUY |  Xây dựng mô hình, Thiết kế Slide |
 
 ---
 ## 📑 Tổng quan cấu trúc báo cáo
@@ -46,7 +43,7 @@
 
 **💻 Triển khai**
    - 🧩 Tiền xử lý:
-      - Đồng bộ kích thước ảnh về $224 \times 224$ pixels14.
+      - Đồng bộ kích thước ảnh về $224 \times 224$ pixels.
       - Chuyển đổi sang ảnh xám (Grayscale) và chuẩn hóa dữ liệu.
       - Tăng cường dữ liệu (Data Augmentation) cho tập Train: xoay ngẫu nhiên $\pm 10^{\circ}$, lật ngang, thay đổi độ tương phản.
    - Kiến trúc mô hình: DenseNet tùy chỉnh với 4 khối Dense Block, sử dụng Growth Rate $k=32$, và các lớp chuyển tiếp (Transition Layers) để nén mô hình.
@@ -58,11 +55,11 @@
 ### Chương 3: Kết quả & Phân tích
 **📊 Kết quả & Thảo luận**
    - 📈 Chỉ số đánh giá:
-      - Accuracy: $97.27\%$ - Dự đoán đúng gần như tuyệt đối trên tập test.
-      - Recall: $97.27\%$ - Tỷ lệ bỏ sót bệnh cực thấp, phù hợp cho sàng lọc y tế.
-      - Precision: $97.29\%$ - Ít báo động giả.
+      - Accuracy: $97.27%$ - Dự đoán đúng gần như tuyệt đối trên tập test.
+      - Recall: $97.27%$ - Tỷ lệ bỏ sót bệnh cực thấp, phù hợp cho sàng lọc y tế.
+      - Precision: $97.29%$ - Ít báo động giả.
       - AUC: $0.9956$ - Khả năng phân tách tuyệt vời giữa hai lớp.
-   - So sánh mô hình: DenseNet vượt trội hơn VGGNet ($96.59\%$) và có hiệu năng tương đương ResNet ($97.61\%$) nhưng ưu việt hơn về hiệu quả tham số và tài nguyên tính toán.
+   - So sánh mô hình: DenseNet vượt trội hơn VGGNet ($96.59%$) và có hiệu năng tương đương ResNet ($97.61%$) nhưng ưu việt hơn về hiệu quả tham số và tài nguyên tính toán.
    - Ưu điểm: Khắc phục tốt hiện tượng quá khớp (Overfitting) nhờ kỹ thuật Weight Decay và Augmentation.
    - Hạn chế: Kích thước đầu vào $224 \times 224$ làm mất chi tiết nhỏ; mô hình mới chỉ dừng lại ở phân loại nhị phân (Bình thường vs. Viêm phổi).
 ### Chương 4: Kết luận
