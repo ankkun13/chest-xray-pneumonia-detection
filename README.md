@@ -1,53 +1,92 @@
-# 🏷️ Tên nhóm
-Nhóm 19
+# 🤖 Báo cáo Bài tập nhóm Môn Trí tuệ Nhân tạo
 
-# 📝 Tên dự án
-Phát hiện viêm phổi từ ảnh X-quang 
+**📋 Thông tin:**
 
-# 👥 Thành viên nhóm
-| 👤 Họ và tên    | 🧑‍🎓 Mã sinh viên | 🐙 Tên GitHub  |
-| --------------- | ------------------ | -------------- |
-| Nguyễn Hữu An   | 23001493           | ankkun13       |
-| Nguyễn Tiến Đạt | 23001508           | tiendat228     |
-| Nguyễn Văn Dũng | 23001508           | NguyenDung2301 |
-| Vũ Đức Quý      | 23001553           | VUDUCQUY       |
+[Các thông tin này cũng cần được đưa vào báo cáo PDF và slide trình bày.]
 
-# 🗒️ Tóm tắt
-Dự án nhằm xây dựng mô hình học sâu để nhận diện viêm phổi từ ảnh X-quang. Chúng tôi sử dụng bộ dữ liệu từ Kaggle gồm ảnh phổi bình thường và viêm phổi, tiến hành tiền xử lý, huấn luyện mô hình CNN, đánh giá và so sánh hiệu năng giữa các kiến trúc mạng khác nhau.
+* **📚 Môn học:** MAT3508 - Nhập môn Trí tuệ Nhân tạo  
+* **📅 Học kỳ:** Học kỳ 1 - 2025-2026  
+* **🏫 Trường:** VNU-HUS (Đại học Quốc gia Hà Nội - Trường Đại học Khoa học Tự nhiên)  
+* **📝 Tiêu đề:** PHÁT HIỆN VIÊM PHỔI TỪ ẢNH X-QUANG
+* **📅 Ngày nộp:** 30/11/2025  
+* **📄 Báo cáo PDF:** 📄 [Liên kết báo cáo](https://github.com/ankkun13/bao-cao-cuoi-ki-introAI)  
+* **🖥️ Slide thuyết trình:** 🖥️ [Liên kết Slide](https://github.com/ankkun13/bao-cao-cuoi-ki-introAI)  
+* **📂 Kho lưu trữ:** 📁 https://github.com/ankkun13/chest-xray-pneumonia-detection
 
-# 🎯 Bối cảnh
-- Viêm phổi là bệnh lý hô hấp nguy hiểm, nếu phát hiện muộn có thể dẫn đến biến chứng nặng hoặc tử vong.  
-- Trong nhiều vùng, bác sĩ và thiết bị chẩn đoán còn hạn chế, do đó ứng dụng AI hỗ trợ phân tích ảnh X-quang có thể giúp chẩn đoán nhanh và chính xác hơn.  
-- Ảnh X-quang dễ thu thập hơn CT scan, vì vậy mô hình AI nếu hoạt động tốt sẽ có tính ứng dụng rộng rãi.
+**👥 Thành viên nhóm:**
 
-# 🚀 Kế hoạch
-1. **Thu thập & tiền xử lý dữ liệu  
-   - Dataset “Chest X-Ray Images (Pneumonia)” từ Kaggle .  
-   -  Resize, chuẩn hóa, tăng cường dữ liệu (data augmentation). 
-   - Chia tập huấn luyện hợp lý.
+**👥 Team Members:**
 
-2. **Xây dựng mô hình và huấn luyện**
-   - Thử nghiệm các CNN: VGG, ResNet, DenseNet, MobileNet, EfficientNet.  
-   - Fine-tuning, transfer learning, thử nghiệm ensemble. 
-   - Huấn luyện mô hình, theo dõi loss & accuracy.
+| 👤 Name           | 🆔 Student ID        | 🐙 GitHub Username   | 🛠️ Contribution |
+|------------------|---------------------|---------------------|----------------------|
+| Nguyễn Hữu An | 23001493 | ankkun13 | [Your Contribution 1] |
+| Nguyễn Tiến Đạt   | 23001515 | tiendat228 | [Your Contribution 2] |
+| Nguyễn Văn Dũng  | 23001508 | NguyenDung2301 | [Your Contribution 3] |
+| Vũ Đức Quý  | 23001553 | VUDUCQUY | [Your Contribution 3] |
 
-3. **Đánh  giá mô hình và tinh chỉnh**  
-   - Huấn luyện mô hình, theo dõi loss & accuracy trên tập validation.  
-   - Tối ưu siêu tham số (learning rate, batch size, dropout…).  
-   - Chỉ số: Accuracy, Precision, Recall, F1, AUC-ROC.  
-   - So sánh các mô hình khác nhau. 
+---
+## 📑 Tổng quan cấu trúc báo cáo
 
-4. **Triển khai & Demo**  
-   - Web/app nhỏ cho phép tải ảnh X-quang và dự đoán.  
-   - Minh họa vùng mô hình chú ý bằng Grad-CAM.  
+### Chương 1: Giới thiệu
+**📝 Tóm tắt dự án**
+   - ✨ Mục tiêu: Xây dựng một hệ thống hỗ trợ chẩn đoán (CAD) tự động để phát hiện bệnh viêm phổi từ ảnh X-quang lồng ngực sử dụng mô hình Học sâu (Deep Learning).
+   - Giải pháp: Nhóm nghiên cứu tự thiết kế và cài đặt lại kiến trúc mạng DenseNet (Densely Connected Convolutional Networks) trên nền tảng PyTorch để tối ưu hóa cho dữ liệu ảnh y tế.
+   - Kết quả nổi bật: Mô hình đạt độ chính xác 97.27%, độ nhạy (Recall) 97.27% và chỉ số AUC là 0.9956 trên tập kiểm thử độc lập.
 
-5. **Phân tích hạn chế & cải tiến**  
-   - Kiểm tra nhạy cảm với sai phân loại (đặc biệt false negative).  
-   - Xem xét khả năng tổng quát trên dữ liệu ngoài tập huấn luyện.  
+**❓ Bài toán đặt ra**
+   - 📌 Bối cảnh: Viêm phổi là nguyên nhân gây tử vong hàng đầu ở trẻ em dưới 5 tuổi. Phương pháp chẩn đoán phổ biến là X-quang phổi, nhưng việc đọc phim phụ thuộc nhiều vào kinh nghiệm bác sĩ và dễ xảy ra sai sót do quá tải công việc.
+   - Thách thức: Các dấu hiệu tổn thương trên phim X-quang thường có độ tương phản thấp, ranh giới không rõ ràng và dễ bị che khuất bởi xương sườn hoặc bóng tim. Ngoài ra, dữ liệu y tế thường gặp vấn đề mất cân bằng nghiêm trọng giữa các lớp bệnh và bình thường.
+   - Ý nghĩa: Hệ thống đóng vai trò như "trợ lý ảo" giúp sàng lọc nhanh, giảm tải áp lực cho hệ thống y tế và hỗ trợ bác sĩ tại các vùng thiếu nhân lực.
 
-# 📚 Tài liệu tham khảo
-- Dataset: [Chest X-Ray Images (Pneumonia) - Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)  
-- Rajpurkar, P. et al. *CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning*. [arXiv:1711.05225](https://arxiv.org/abs/1711.05225)  
-- Mabrouk, A. et al. *Pneumonia Detection on chest X-ray images Using Ensemble of Deep Convolutional Neural Networks*. [arXiv:2312.07965](https://arxiv.org/abs/2312.07965)  
-- Wang, X. et al. *ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks*. [arXiv:1705.02315](https://arxiv.org/abs/1705.02315)  
-- Frameworks: TensorFlow/Keras, PyTorch, scikit-learn, OpenCV, matplotlib, Grad-CAM.
+### Chương 2: Phương pháp & Triển khai
+**⚙️ Phương pháp**
+   - 🔍 Cơ sở lý thuyết: Sử dụng Mạng Nơ-ron Tích chập (CNN), cụ thể là kiến trúc DenseNet. Khác với VGG hay ResNet, DenseNet sử dụng cơ chế kết nối dày đặc và ghép nối (concatenation) các bản đồ đặc trưng, giúp giải quyết vấn đề biến mất đạo hàm và tái sử dụng đặc trưng hiệu quả.
+   - Dữ liệu: Sử dụng bộ dữ liệu "Chest X-Ray Images (Pneumonia)" từ Kaggle gồm 5,856 ảnh (chia thành 2 lớp: Normal và Pneumonia). Dữ liệu được chia theo tỷ lệ 80% Train - 10% Validation - 10% Test.
+   - Xử lý mất cân bằng: Áp dụng kỹ thuật Lấy mẫu ngẫu nhiên có trọng số (Weighted Random Sampler) để ép buộc mô hình học công bằng giữa các lớp, khắc phục tình trạng dữ liệu bệnh nhiều gấp 3 lần dữ liệu thường.
+
+**💻 Triển khai**
+   - 🧩 Tiền xử lý:
+      - Đồng bộ kích thước ảnh về $224 \times 224$ pixels14.
+      - Chuyển đổi sang ảnh xám (Grayscale) và chuẩn hóa dữ liệu.
+      - Tăng cường dữ liệu (Data Augmentation) cho tập Train: xoay ngẫu nhiên $\pm 10^{\circ}$, lật ngang, thay đổi độ tương phản.
+   - Kiến trúc mô hình: DenseNet tùy chỉnh với 4 khối Dense Block, sử dụng Growth Rate $k=32$, và các lớp chuyển tiếp (Transition Layers) để nén mô hình.
+   - Cấu hình huấn luyện:
+      - Framework: PyTorch.
+      - Phần cứng: GPU NVIDIA Tesla T4 trên Google Colab.
+      - Siêu tham số: Optimizer Adam (LR $= 0.001$), Loss function CrossEntropy, 100 Epochs, Batch size 32.
+
+### Chương 3: Kết quả & Phân tích
+**📊 Kết quả & Thảo luận**
+   - 📈 Chỉ số đánh giá:
+      - Accuracy: $97.27\%$ - Dự đoán đúng gần như tuyệt đối trên tập test.
+      - Recall: $97.27\%$ - Tỷ lệ bỏ sót bệnh cực thấp, phù hợp cho sàng lọc y tế.
+      - Precision: $97.29\%$ - Ít báo động giả.
+      - AUC: $0.9956$ - Khả năng phân tách tuyệt vời giữa hai lớp.
+   - So sánh mô hình: DenseNet vượt trội hơn VGGNet ($96.59\%$) và có hiệu năng tương đương ResNet ($97.61\%$) nhưng ưu việt hơn về hiệu quả tham số và tài nguyên tính toán.
+   - Ưu điểm: Khắc phục tốt hiện tượng quá khớp (Overfitting) nhờ kỹ thuật Weight Decay và Augmentation.
+   - Hạn chế: Kích thước đầu vào $224 \times 224$ làm mất chi tiết nhỏ; mô hình mới chỉ dừng lại ở phân loại nhị phân (Bình thường vs. Viêm phổi).
+### Chương 4: Kết luận
+**✅ Kết luận & Hướng phát triển**
+   - 🔭 Tổng kết: Đồ án đã xây dựng thành công mô hình Deep Learning có độ tin cậy cao, chứng minh tính hiệu quả của kiến trúc DenseNet đối với dữ liệu y tế nhỏ và mất cân bằng.
+   - Hướng phát triển:
+      - Nâng cao chất lượng đầu vào (kích thước $512 \times 512$) và thử nghiệm kiến trúc Vision Transformer (ViT).
+      - Mở rộng bài toán sang phân loại đa lớp (Vi khuẩn, Virus, Nấm) và phân đoạn vùng tổn thương (Segmentation) để đo diện tích vùng viêm.
+      - Triển khai ứng dụng Web/Mobile App và tích hợp chuẩn DICOM/PACS.
+
+### Tài liệu tham khảo & Phụ lục
+**📚 Tài liệu tham khảo**
+   - [1] Kaiming He et al. Deep Residual Learning for Image Recognition (ResNet).
+
+   - [2] Gao Huang et al. Densely Connected Convolutional Networks (DenseNet).
+
+   - [3] Dataset: "Chest X-Ray Images (Pneumonia)".
+
+   - [4] Kingma & Ba. Adam: A Method for Stochastic Optimization.
+
+   - [5] Simonyan & Zisserman. VGGNet.
+
+**📎 Phụ lục** *(Tùy chọn)*
+   - 📎 Kết quả bổ sung, đoạn mã hoặc hướng dẫn sử dụng
+
+---
+
