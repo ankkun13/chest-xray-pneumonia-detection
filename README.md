@@ -17,9 +17,9 @@
 | 👤 Name           | 🆔 Student ID        | 🐙 GitHub Username   | 🛠️ Contribution |
 |------------------|---------------------|---------------------|----------------------|
 | Nguyễn Hữu An | 23001493 | ankkun13 | Xây dựng Demo, Xây dựng mô hình |
-| Nguyễn Tiến Đạt   | 23001515 | tiendat228 | Thiết kế Slide, Làm báo cáo |
-| Nguyễn Văn Dũng  | 23001508 | NguyenDung2301 | Xây dựng mô hình, Xây dựng Demo |
-| Vũ Đức Quý  | 23001553 | VUDUCQUY |  Xây dựng mô hình, Thiết kế Slide |
+| Nguyễn Tiến Đạt   | 23001515 | tiendat228 | Thiết kế Slide, Làm báo cáo, Tìm hiểu cơ sở lý thuyết |
+| Nguyễn Văn Dũng  | 23001508 | NguyenDung2301 | Xây dựng mô hình, Xây dựng Demo, Triển khai và đánh giá |
+| Vũ Đức Quý  | 23001553 | VUDUCQUY |  Xây dựng mô hình, Thiết kế Slide, Nêu vấn đề, bài toán, thách thức |
 
 ---
 ## 📑 Tổng quan cấu trúc báo cáo
